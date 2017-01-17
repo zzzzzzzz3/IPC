@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.msi.ipc">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".BundleActivity"
+            android:process=":bundle"></activity>
+        <activity android:name=".FileActivity"
+            android:process=":File"></activity>
+        <activity android:name=".MessengerActivity"></activity>
+        <activity android:name=".AidlActivity"></activity>
+        <activity android:name=".SocketActivity"></activity>
+        <activity android:name=".ContentProviderActivity"></activity>
+
+        <service android:name=".services.MessengerService"
+            android:process=":MessengerService"></service>
+        <service android:name=".services.BookManagerService"
+            android:process=":bookservice"></service>
+        <service android:name=".services.SocketService"
+            android:process=":socketService"></service>
+
+        <provider
+            android:authorities="com.msi.example.ipc"
+            android:name=".providers.BookProvider"
+            android:process=":bookprovider"></provider>
+    </application>
+
+</manifest>
