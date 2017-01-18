@@ -30,6 +30,7 @@
         <activity android:name=".AidlActivity"></activity>
         <activity android:name=".SocketActivity"></activity>
         <activity android:name=".ContentProviderActivity"></activity>
+        <activity android:name=".BinderPoolActivity"></activity>
 
         <service android:name=".services.MessengerService"
             android:process=":MessengerService"></service>
@@ -37,6 +38,8 @@
             android:process=":bookservice"></service>
         <service android:name=".services.SocketService"
             android:process=":socketService"></service>
+        <service android:name=".services.BinderPoolService"
+            android:process=":binderpool"></service>
 
         <provider
             android:authorities="com.msi.example.ipc"

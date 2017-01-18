@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btn_aidl;
     private Button btn_soket;
     private Button btn_contnetProvider;
+    private Button btn_binderpool;
 
 
     @Override
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_aidl = (Button) findViewById(R.id.btn_aidl);
         btn_soket = (Button) findViewById(R.id.btn_socket);
         btn_contnetProvider = (Button) findViewById(R.id.btn_contentprovider);
+        btn_binderpool = (Button) findViewById(R.id.btn_binderpool);
     }
 
     private void setOnClick() {
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_aidl.setOnClickListener(this);
         btn_soket.setOnClickListener(this);
         btn_contnetProvider.setOnClickListener(this);
+        btn_binderpool.setOnClickListener(this);
     }
 
     @Override
@@ -66,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             openSocketActivity();
         }else if(view == btn_contnetProvider){
             openContentProviderActivity();
+        }else if(view == btn_binderpool){
+            openBinderPool();
         }
     }
 
@@ -132,6 +137,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void openContentProviderActivity() {
         Intent intent = new Intent(MainActivity.this,ContentProviderActivity.class);
+        startActivity(intent);
+    }
+
+    private void openBinderPool() {
+        Intent intent = new Intent(MainActivity.this,BinderPoolActivity.class);
         startActivity(intent);
     }
 }
